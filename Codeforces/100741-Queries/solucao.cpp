@@ -32,31 +32,31 @@ int query(int pos)
     return ans;
 }
 
-// int plusVal(int pos, int val)
-// {
-//     return bit[pos] += val;
-// }
+int plusVal(int pos, int val)
+{
+    return bit[pos] += val;
+}
 
-// int sum(int x, int y, int z)
-// {
-//     int ans = 0;
+int sum(int x, int y, int z)
+{
+    int ans = 0;
 
-//     for (int i = x; i < y; i++)
-//     {
-//         ans += bit[x];
-//     }
+    for (int i = x; i < y; i++)
+    {
+        ans += bit[x];
+    }
 
-//     //cout<<"ANS: "<<ans<<"ANS MODULO(X)"<<modulo(ans)<<endl;
+    //cout<<"ANS: "<<ans<<"ANS MODULO(X)"<<modulo(ans)<<endl;
     
-//     return ans;
-// }
+    return ans;
+}
 
-// int decrease(int pos, int val)
-// {
-//     if(bit[pos] - val < 0) return bit[pos];
+int decrease(int pos, int val)
+{
+    if(bit[pos] - val < 0) return bit[pos];
 
-//     else return bit[pos] -= val;
-// }
+    else return bit[pos] -= val;
+}
 
 int main(int argc, char const * argv[]){
     optimize;
