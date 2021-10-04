@@ -13,36 +13,54 @@ using namespace std;
 
 int dx[] = {0, 1, 0, -1};
 int dy[] = {-1, 0, 1, 0};
-int N, M, turno;
-vector<int> suditos(1);
+int N, M, turno, qntEngressos = 0;
+
+struct Sudito{
+    int index;
+    int value;
+    bool visit;
+    Sudito(int u, int v, bool c): index(u), value(v), visit(c) {}
+};
+vector<Sudito> suditos;
 
 void remove(int t){
-    int c = 1;
-    int mult = c * t;
     queue<int> mt;
-    for (int i = 1; i < suditos.size(); i++)
+    for (int i = 1; i <= qntEngressos; i++)
     {
-        if(i*t > suditos.size()){
+        if(i*t > qntEngressos){
             break;
         }else{
             mt.push(i*t);
         }
     }
 
-    while(!mt.empty()){
-        suditos.erase(suditos.begin(), (suditos.begin() + mt.front()) - 1);
-        mt.pop();
+
+    int index = 1;
+    bool mude = false;
+    for(auto x : suditos){
+        if(x.index == mt.front() and x.visit){
+            x.visit = false;
+            index = x.index;
+            qntEngressos--;
+            mt.pop();
+        }else{
+            
+            int pro = index;
+            index = x.index;
+            x.index = pro;
+        }
     }
-    
+
 }
 
 int main(int argc, char const *argv[]){
     optimize;
     cin >> N;
     cin >> M;
+    qntEngressos = N;
     for (int i = 1; i <= N; i++)
     {
-        suditos.push_back(i);
+        suditos.emplace_back(i, i, true);   
     }
     
 
@@ -51,8 +69,11 @@ int main(int argc, char const *argv[]){
         remove(turno);
     } 
 
-    for(int i = 1; i < suditos.size(); i ++){
-        cout << suditos[i] << " ";
+
+    for(auto x : suditos){
+        if(x.visit){
+            cout << x.value << endl;
+        }
     }
 
     return 0;
