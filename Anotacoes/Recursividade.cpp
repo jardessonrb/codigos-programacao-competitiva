@@ -4,15 +4,6 @@ using namespace std;
 
 int d = 1;
 
-//int recursividade(int a, int b)
-//{
-//	a /= b;
-//	cout<<a<<endl;
-//	if(a <= 1) return a;
-//
-//	return recursividade(a, b);
-//}
-
 int fatoracao(int a, int b){
 	int t = max(a, b), s = 0;
 	for(int i=2; i<t; i++){

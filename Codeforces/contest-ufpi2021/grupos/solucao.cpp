@@ -13,64 +13,63 @@ using namespace std;
 
 int dx[] = {0, 1, 0, -1};
 int dy[] = {-1, 0, 1, 0};
-int N, Q;
 
-struct Aluno{
-    int n;
-    int grupo;
-};
-
+long pai[10000000], N;
 int ans = 0;
-map<int, Aluno> alunos;
+long sz[10000000];
 
-void adicionar(int a1, int a2){
-    if(alunos[a1].grupo == alunos[a2].grupo) return;
+vector<int> conjuntos[1000000];
 
-    int gp = alunos[a2].grupo;
-    for(auto &x : alunos){
-        if(x.second.grupo == gp){
-            x.second.grupo = alunos[a1].grupo;
-        }
-    }
+int find(int x){
 
-    ans--;
+    if(x == pai[x]) return x;
+
+    return pai[x] = find(pai[x]);
 }
 
-void mostrar(){
-    cout << ans << endl;
+void join(int u, int v){
+
+    u = find(u);
+    v = find(v);
+
+    if(u == v) return;
+
+    if(sz[u] > sz[v])
+        swap(u, v);
+        ans--;
+
+    sz[v] += sz[u];
+    sz[u] = 0;
+
+    pai[u] = v;
 }
 
 
 int main(int argc, char const *argv[]){
     optimize;
-    cin >> N >> Q; 
-    ans = N;
-    for (int i = 1; i <= N; i++)
-    {
-        Aluno aluno;
-        aluno.grupo = i;
-        aluno.n = i;
-        alunos[i] = aluno;
-    }
-    
-    while(Q--){
-        int op;
 
+    int N, Q;
+
+    cin >> N >> Q;
+    ans = N;
+
+    for(int i = 1 ; i <= N; i++)
+    {
+        pai[i] = i;
+        sz[i] = 1;
+    }
+
+    while(Q--){
+        int op, a , b;
         cin >> op;
 
         if(op == 1){
-            int a, b;
-
             cin >> a >> b;
-            adicionar(a, b);
-
+            join(a, b);
         }else{
-
-            mostrar();
+            cout << ans << endl;
         }
     }
-
-
     
 
     return 0;
