@@ -18,5 +18,12 @@ int dy[] = {-1, 0, 1, 0};
 int main(int argc, char const *argv[]){
     optimize;
 
+    int km, disP, valKm, valP;
+
+    cin >> km >> disP;
+    cin >> valKm >> valP;
+
+    cout << (km * valKm) + ((km / disP) * valP) << endl;
+
     return 0;
 }

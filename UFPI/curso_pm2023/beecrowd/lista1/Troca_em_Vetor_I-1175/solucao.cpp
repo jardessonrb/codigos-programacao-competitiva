@@ -17,6 +17,21 @@ int dy[] = {-1, 0, 1, 0};
 
 int main(int argc, char const *argv[]){
     optimize;
+    int VALUES = 20;
+    int array[VALUES];
+
+    for (int i = 0; i < VALUES; i++)
+    {
+       cin >> array[i];
+    }
+
+    for (int i = 0; i < VALUES; i++)
+    {
+        cout << "N["<< i <<"] = " << array[VALUES - i - 1] << endl;
+    }
+    
+    
+    
 
     return 0;
 }

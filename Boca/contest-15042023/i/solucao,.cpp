@@ -8,7 +8,6 @@
 #define ld long double
 #define INF 2000000020LL
 #define endl '\n'
-//g++ -std=c++17 -O2 --static solucao.cpp
 
 using namespace std;
 
@@ -17,6 +16,24 @@ int dy[] = {-1, 0, 1, 0};
 
 int main(int argc, char const *argv[]){
     optimize;
+
+    int n, k;
+
+    cin >> n >> k;
+
+    while(n--){
+        int temp;
+
+        cin >> temp;
+    }
+
+    while(k--){
+        int cm;
+
+        cin >> cm;
+    }
+    
+    
 
     return 0;
 }

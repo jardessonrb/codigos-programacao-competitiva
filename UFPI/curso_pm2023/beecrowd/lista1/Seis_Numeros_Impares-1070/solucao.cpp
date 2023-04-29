@@ -15,8 +15,27 @@ using namespace std;
 int dx[] = {0, 1, 0, -1};
 int dy[] = {-1, 0, 1, 0};
 
+bool isPar(int valor) {
+    return (valor % 2) == 0;
+}
+
 int main(int argc, char const *argv[]){
     optimize;
+
+    int x;
+
+    cin >> x;
+
+    int cont = 6;
+    while(cont > 0)
+    {
+        if(!isPar(x)){
+            cout << x << endl;
+            cont--;
+        }
+        x++;
+    }
+    
 
     return 0;
 }

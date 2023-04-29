@@ -18,5 +18,27 @@ int dy[] = {-1, 0, 1, 0};
 int main(int argc, char const *argv[]){
     optimize;
 
+    double precos[1010];
+    precos[1001] = 1.5;
+    precos[1002] = 2.5;
+    precos[1003] = 3.5;
+    precos[1004] = 4.5;
+    precos[1005] = 5.5;
+
+    int N;
+    cin >> N;
+
+    double soma = 0;
+    while(N--){
+        int produto;
+        int qnt; 
+
+        cin >> produto >> qnt;
+
+        soma += (precos[produto] * qnt);
+    }
+
+    cout << fixed << setprecision(2) << soma << endl;
+
     return 0;
 }

@@ -17,6 +17,23 @@ int dy[] = {-1, 0, 1, 0};
 
 int main(int argc, char const *argv[]){
     optimize;
+    //Refazer
+    int n;
 
+    cin >> n;
+    vector<int> fibo;
+    fibo.push_back(0);
+    fibo.push_back(1);
+    for (int i = 2; i < 46; i++)
+    {
+        fibo.push_back(fibo[i-1] + fibo[i-2]);
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << fibo[i] << ((i + 1) < n ? " " : "");
+    }
+    cout << endl;
+    
     return 0;
 }

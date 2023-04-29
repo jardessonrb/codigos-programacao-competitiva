@@ -18,5 +18,25 @@ int dy[] = {-1, 0, 1, 0};
 int main(int argc, char const *argv[]){
     optimize;
 
+    int N;
+
+    cin >> N;
+
+    int pos;
+    int valor = INT32_MAX;
+
+    for (int i = 0; i < N; i++)
+    {   
+       int x;
+       cin >> x;
+       if(x < valor){
+            valor = x;
+            pos = i;
+       }
+    }
+
+    cout << "Menor valor: " << valor << endl;
+    cout << "Posicao: " << pos << endl;
+    
     return 0;
 }

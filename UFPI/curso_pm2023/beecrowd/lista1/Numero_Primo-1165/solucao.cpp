@@ -15,8 +15,32 @@ using namespace std;
 int dx[] = {0, 1, 0, -1};
 int dy[] = {-1, 0, 1, 0};
 
+bool isPrimo(int x){
+   
+    double raiz = sqrt(x);
+    
+    for (int i = 2; i <= raiz; i++)
+    {
+        if(x % i == 0) return false;
+    }
+    
+    return true;
+}
+
 int main(int argc, char const *argv[]){
     optimize;
+
+    int n;
+
+    cin >> n;
+    while(n--){
+        int x;
+
+        cin >> x;
+
+        cout << x << (isPrimo(x) ? " eh primo" : " nao eh primo") << endl;
+    }
+    
 
     return 0;
 }

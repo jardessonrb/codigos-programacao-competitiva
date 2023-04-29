@@ -18,5 +18,11 @@ int dy[] = {-1, 0, 1, 0};
 int main(int argc, char const *argv[]){
     optimize;
 
+    int a, b;
+
+    cin >> a >> b;
+
+    cout << "X = " << (a + b) << endl;
+
     return 0;
 }

@@ -15,8 +15,22 @@ using namespace std;
 int dx[] = {0, 1, 0, -1};
 int dy[] = {-1, 0, 1, 0};
 
+bool isPar(int valor) {
+    return (valor % 2) == 0;
+}
+
 int main(int argc, char const *argv[]){
     optimize;
+
+    int x, y;
+    int soma = 0;
+
+    cin >> x >> y;
+
+    for (int i = (min(x, y) + 1); i < max(x, y); i++)
+        if(!isPar(i)) soma += i;
+
+    cout << soma  << endl;
 
     return 0;
 }

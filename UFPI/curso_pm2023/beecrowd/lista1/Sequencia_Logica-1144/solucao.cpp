@@ -18,5 +18,18 @@ int dy[] = {-1, 0, 1, 0};
 int main(int argc, char const *argv[]){
     optimize;
 
+    int N;
+
+    cin >> N;
+
+    int i = 1;
+    while(N--){
+        int elevado = i * i;
+        cout << i << " " << elevado << " " << i * elevado << endl;
+        cout << i << " " << elevado + 1 << " " << (elevado * i) + 1 << endl;
+
+        i++;
+    }
+
     return 0;
 }

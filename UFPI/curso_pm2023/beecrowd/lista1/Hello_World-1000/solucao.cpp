@@ -18,5 +18,7 @@ int dy[] = {-1, 0, 1, 0};
 int main(int argc, char const *argv[]){
     optimize;
 
+    cout << "Hello World!" <<endl;
+
     return 0;
 }

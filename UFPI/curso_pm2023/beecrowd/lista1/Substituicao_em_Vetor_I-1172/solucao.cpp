@@ -18,5 +18,20 @@ int dy[] = {-1, 0, 1, 0};
 int main(int argc, char const *argv[]){
     optimize;
 
+    int VALUES = 10;
+    int array[VALUES];
+
+    for (int i = 0; i < VALUES; i++)
+    {
+       int x;
+       cin >> x;
+       array[i] = (x <= 0 ? 1 : x);
+    }
+
+    for (int i = 0; i < VALUES; i++)
+    {
+        cout << "X["<< i <<"] = " << array[i] << endl;
+    }
+    
     return 0;
 }
