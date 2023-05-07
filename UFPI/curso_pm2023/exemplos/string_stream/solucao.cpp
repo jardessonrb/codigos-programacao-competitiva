@@ -8,6 +8,7 @@
 #define ld long double
 #define INF 2000000020LL
 #define endl '\n'
+#define split(str) vector<string> split(string str){vector<string> strs; istringstream(str); string substr; while(getline(iss, strspli, ':')){strs.push_back(strspli)}return strs;}
 
 using namespace std;
 

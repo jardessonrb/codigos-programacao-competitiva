@@ -19,15 +19,19 @@ class Competidor {
     private:
         string nome;
         double difi;
-        double* notas;
+        double notas[7];
 
     public:
-    Competidor(string nome, double dif, double* pontos){
+    Competidor(string nome, double dif){
         this->nome = nome;
         this->difi = dif;
-        this->notas = new double[7];
-        memcpy(this->notas, pontos, 7 * sizeof(double));
+        // this->notas = new double[7];
+        // memcpy(this->notas, pontos, 7 * sizeof(double));
     }
+    void addNota(double nota){
+        int size = sizeof(this->notas) / sizeof(double);
+    }
+
     ~Competidor() {
         delete[] notas; 
     }
