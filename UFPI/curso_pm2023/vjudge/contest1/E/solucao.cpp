@@ -19,5 +19,32 @@ int dy[] = {-1, 0, 1, 0};
 int main(int argc, char const *argv[]){
     optimize;
 
+    int N;
+
+    cin >> N;
+    map<string, bool> banco;
+    map<string, int> freq;
+
+    while(N--){
+        string nome;
+
+        cin >> nome;
+
+        if(!banco[nome]){
+            banco[nome] = true;
+            freq[nome]  = 1;
+            cout << "OK" << endl;
+        }else {
+            stringstream novoNome;
+             
+            novoNome << nome << freq[nome]++;
+
+            banco[novoNome.str()] = true;
+            freq[novoNome.str()] = 1;
+
+            cout << novoNome.str() << endl;
+        }
+    }
+
     return 0;
 }

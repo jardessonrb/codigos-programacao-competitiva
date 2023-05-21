@@ -19,5 +19,35 @@ int dy[] = {-1, 0, 1, 0};
 int main(int argc, char const *argv[]){
     optimize;
 
+    int N;
+
+    cin >> N;
+
+    vector<int> array(N + 1, 0), prefix(N + 1, 0);
+
+    for (int i = 1; i <= N; i++)
+        cin >> array[i];
+
+    for (int i = 1; i <= N; i++)
+    {
+        prefix[i] = prefix[i - 1] + array[i];
+    }
+
+    int Q;
+
+    cin >> Q;
+
+    while(Q--){
+        int i, j;
+
+        cin >> i >> j;
+
+        int minI = min(i, j);
+        int maxJ = max(i, j);
+
+        cout << prefix[maxJ + 1] - prefix[minI] << endl;
+    }
+    
+
     return 0;
 }

@@ -19,5 +19,36 @@ int dy[] = {-1, 0, 1, 0};
 int main(int argc, char const *argv[]){
     optimize;
 
+    int N;
+
+    queue<ll> fila;
+
+    cin >> N;
+    
+    while(N--)
+    {
+        int opc;
+        ll value;
+
+        cin >> opc;
+
+        if(opc == 1){
+            cin >> value;
+
+            fila.push(value);
+        }else if(opc == 2){
+            if(!fila.empty()){
+                fila.pop();
+            }
+        }else {
+            if(fila.empty()){
+                cout << "Empty!" << endl;
+            }else {
+                cout << fila.front() << endl;
+            }
+        }
+
+    }
+
     return 0;
 }
