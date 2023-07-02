@@ -16,8 +16,39 @@ using namespace std;
 int dx[] = {0, 1, 0, -1};
 int dy[] = {-1, 0, 1, 0};
 
+ll fibonacci[MAXN];
+bool calculado[MAXN];
+
+ll calc(int valor){
+    if(valor < 2) return valor;
+
+    if(calculado[valor]) return fibonacci[valor];
+
+    calculado[valor] = true;
+
+    fibonacci[valor] =  calc(valor - 1) + calc(valor - 2);
+
+    return fibonacci[valor];
+}
+
 int main(int argc, char const *argv[]){
     optimize;
+
+    fibonacci[0] = 0;
+    fibonacci[1] = 1;
+    calculado[0] = calculado[1] = true;
+
+    int N;
+
+    cin >> N;
+
+    while(N--){
+        int valor;
+
+        cin >> valor;
+
+        cout << "Fib("<< valor << ") = " << calc(valor) << endl;
+    }
 
     return 0;
 }
