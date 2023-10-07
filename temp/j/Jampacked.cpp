@@ -14,14 +14,33 @@
 
 using namespace std;
 
-const int MOD = 1e9 + 3;
+const int MOD = 1e4 + 3;
 const int base = 101;
 const int MAXN = 2e5 + 100;
 int dx[] = {0, 1, 0, -1};
 int dy[] = {-1, 0, 1, 0};
 
+ll calc(ll k, ll resto){
+    return resto + k / 2;
+}
+
 int main(int argc, char const *argv[]){
     optimize;
+
+    ll  N, K;
+
+    cin >> N >> K;
+
+    if(N <= K){
+        cout << N << endl;
+    }else {
+        ll resto = N % K;
+        if(resto == 0){
+            cout << K << endl;
+        }else {
+            cout << calc(K, resto) << endl;
+        }
+    }
 
     return 0;
 }

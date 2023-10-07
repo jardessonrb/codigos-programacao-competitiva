@@ -9,6 +9,7 @@
 #define INF 2000000020LL
 #define CASAS_PRECISAO 0.0000001
 #define endl '\n'
+#define check_in_matriz(l, c, minl, maxc) (l >= 0 && l < minl) && (c < maxc && c >= 0) && (!visitados[l][c])
 //g++ -std=c++17 -O2 --static solucao.cpp
 
 using namespace std;
